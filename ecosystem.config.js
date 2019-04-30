@@ -1,5 +1,5 @@
 module.exports = {
-  apps : [{
+  apps: [{
     name: 'mock-server',
     script: 'bin/www',
 
@@ -20,14 +20,14 @@ module.exports = {
     }
   }],
 
-  deploy : {
-    production : {
-      user : 'root',
-      host : '59.110.212.49',
-      ref  : 'origin/master',
-      repo : 'https://github.com/flitrue/mock-server.git',
-      path : '/var/www/html',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+  deploy: {
+    production: {
+      user: 'root',
+      host: '59.110.212.49',
+      ref: 'origin/master',
+      repo: 'https://github.com/flitrue/mock-server.git',
+      path: '/var/www/html',
+      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production'
     }
   }
 };
