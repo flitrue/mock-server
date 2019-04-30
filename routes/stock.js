@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var Mock = require('mockjs')
+var Mock = require('mockjs');
+var kline = require('../public/json/stock-kline.json');
 
 router.get('/', function (req, res, next) {
   var code = req.query.code
@@ -30,5 +31,9 @@ router.get('/', function (req, res, next) {
     }]
   }))
 });
+
+router.get('/kline', function(req, res, next) {
+  return res.json(kline)
+})
 
 module.exports = router;
